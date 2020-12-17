@@ -5,11 +5,14 @@
 void main(){
     int ord, i, j;
     int lN, cN;
+
     printf("Informe a ordem da matriz: ");
     scanf("%d", &ord);
 
+    // Iniciando a Matriz de acordo com sua ordem informada
     int matriz[ord][ord];
 
+    //Atribuindo os valores da Matriz verificando o menor entre eles
     for(i=0; i<ord; i++) {
         for(j=0; j<ord; j++){
             lN = abs((ord - 1) - (i));
@@ -18,6 +21,7 @@ void main(){
         }
     }
 
+    //Printando a matriz de forma a ficar no estilo padrão m x n
     for(i=0; i<ord; i++){
         for(j=0; j<ord; j++){
             printf("%3d ", matriz[i][j]);
@@ -28,6 +32,11 @@ void main(){
     }
 }
 
+/*
+*   Função utilizar o método Bublle Short para ordenar a os valores informados,
+*   colocados dentro de um vetor durante a chamada da função e retornando apenas
+*   o valor na posição zero, por ser o menor valor
+*/
 int min(int a, int b, int c, int d){
     int i, j, aux, vetor[4];
 
@@ -36,6 +45,7 @@ int min(int a, int b, int c, int d){
     vetor[2] = c;
     vetor[3] = d;
 
+    //Bubble Short
     for(i=0; i<3; i++)
 	  for(j=i+1; j<4; j++)
 	    if(vetor[j]<vetor[i])
